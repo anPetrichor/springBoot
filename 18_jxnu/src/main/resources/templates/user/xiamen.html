@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>厦门</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script src="/js/head.js"></script>
+    <link type="text/css" rel="stylesheet" href="/css/travel.css">
+</head>
+<body>
+<!--导入公共头部-->
+<div th:replace="~{common/head::traveltop}"></div>
+<div th:replace="~{common/head::userInfo}"></div>
+
+<div class="sanya" style="margin-top: -20px">
+    <div class="scenery-head">
+        <div class="container">
+            <div class="row">
+                <h3><strong>厦门&nbsp;&nbsp;&nbsp;&nbsp;Xiamen</strong></h3>
+                <span>欢迎您访问厦门</span>
+                <hr>
+                <div class="col-lg-8">
+                    <p>厦门 ，简称“厦”或“鹭”，别称鹭岛，是闽南民系城市之一 ，是福建省副省级市、计划单列市，国务院批复确定的中国经济特区，东南沿海重要的中心城市、港口及风景旅游城市</p>
+                    <p>截至2018年，厦门的综合信用指数在36个省会及副省级城市排名第2，营商环境居副省级城市第1位  ，外贸综合竞争力居全国第5位，厦门港集装箱吞吐量位居全球第14位 。2018年重新确认国家卫生城市（区）。
+                        2020年1月22日，被住房和城乡建设部命名为国家生态园林城市， 被全国双拥工作领导小组办公室授予厦门“全国双拥模范城市”。</p>
+                </div>
+                <div class="col-lg-4">
+                    <!--视频控件-->
+                    <video controls>
+                        <source src="../../video/厦门.mp4" type="video/mp4">
+                        <source src="../../video/厦门.ogg" type="video/ogg">
+                        <source src="../../video/厦门.webm" type="video/webm">
+                        <object data="../../video/厦门.mp4" width="320" height="240">
+                            <embed src="../../video/厦门.swf" width="320" height="240">
+                        </object>
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container scenery-info">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <ul class="nav nav-pills nav-justified" role="tablist">
+                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">主页</a></li>
+                    <li role="presentation"><a href="#scenery" aria-controls="scenery" role="tab" data-toggle="tab">景点</a></li>
+                    <li role="presentation"><a href="#accommodation" aria-controls="accommodation" role="tab" data-toggle="tab">住宿</a></li>
+                    <li role="presentation"><a href="#cate" aria-controls="cate" role="tab" data-toggle="tab">美食店</a></li>
+                </ul>
+
+            </div>
+            <div class="panel-body">
+
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="home">
+                        <!-- 厦门主页 -->
+                        <div class="main-info">
+                            <div class="strategy">
+                                <h2>旅游攻略</h2>
+                                <div class="strategy-head">
+                                    <h3>景点概况</h3>
+                                    <hr>
+                                </div>
+                                <div class="strategy-item">
+                                    <h4>厦门速览</h4>
+                                    <div>
+                                        <p>鼓浪屿，2007年5月8日起被正式批准为国家5A级旅游景区。被国家地理杂志评选为“中国最美五大城区之首”，素有“海上花园”的美称。岛上完好地保留着许多具有中外建筑风格的建筑物，有“万国建筑博览会”之誉。</p>
+                                        <p>屿上居民喜爱音乐，钢琴拥有密度高，被赞为琴岛。</p>
+                                    </div>
+                                </div>
+                                <div class="strategy-item">
+                                    <h4>最佳旅行时间</h4>
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <p>春季（三月至五月）：阳光正好，大地回暖，穿暖花开，湿度高。五月到六月属于雨季，游玩要常备雨伞。</p>
+                                            <p>夏季（六至八月）：太阳强，气温高，一般会达到38度左右，有一段晴热多雨的天气。</p>
+                                            <p>秋天（九月到十一月）：仍然很热。是茶农聚茶、品茶的最佳时机。</p>
+                                            <p>冬季（十二月至二月）：气温会相对温暖，适合海滨度假。</p>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <img class="img-thumbnail" th:src="@{/images/homepage/xiamen_1.jpg}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="strategy-item">
+                                    <h4>建议游玩天数</h4>
+                                    <div>
+                                        <p>3-4天。</p>
+                                    </div>
+                                </div>
+                                <div class="strategy-head">
+                                    <h3>景点游玩</h3>
+                                    <hr>
+                                </div>
+                                <div class="strategy-item">
+                                    <h4>路线推荐</h4>
+                                    <div>
+                                        <p><a target="_blank" href="/travel/route/003?routeId=3">丽江+玉龙雪山4日玩法  游玩时间：2-5天  最佳季节：7-10月<small>(点击查看详情)</small></a></p>
+                                        <p>D1  厦门大学 → 南普陀 → 云水谣</p>
+                                        <p>D2  鼓浪屿 → 毓园 → 马约翰广场</p>
+                                        <p>D3  最美情人之路环岛路 → 曾厝垵 → 集美学村</p>
+                                    </div>
+                                </div>
+                                <div class="strategy-item">
+                                    <h4>必游景点</h4>
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-3">
+                                            <div class="thumbnail">
+                                                <img th:src="@{/images/homepage/xiamen_2.jpg}" style="height: 163px;" alt="...">
+                                            </div>
+                                            <div class="caption">
+                                                <h5 style="text-align: center;">厦门大学</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-md-3">
+                                            <div class="thumbnail">
+                                                <img th:src="@{/images/homepage/xiamen_3.jpg}" style="height: 163px;" alt="...">
+                                            </div>
+                                            <div class="caption">
+                                                <h5 style="text-align: center;">云水谣</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-md-3">
+                                            <div class="thumbnail">
+                                                <img th:src="@{/images/homepage/xiamen_4.jpg}" style="height: 163px;" alt="...">
+                                            </div>
+                                            <div class="caption">
+                                                <h5 style="text-align: center;">鼓浪屿</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-md-3">
+                                            <div class="thumbnail">
+                                                <img th:src="@{/images/homepage/xiamen_5.jpg}" style="height: 163px;" alt="...">
+                                            </div>
+                                            <div class="caption">
+                                                <h5 style="text-align: center;">毓园</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="scenery">
+                        <!-- 哈尔滨景点 -->
+                        <div class="row">
+
+                            <!--/*@thymesVar id="sceneries" type="com.travel.domain.Scenery"*/-->
+                            <div th:each="scenery:${sceneries}">
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="thumbnail">
+                                        <!--/*@thymesVar id="scenery" type="com.travel.domain.Scenery"*/-->
+                                        <img th:src="@{${scenery.url}}" alt="...">
+                                        <div class="caption">
+                                            <h3 th:text="${scenery.name}"></h3>
+                                            <p th:text="${scenery.location}"></p>
+                                            <p th:text="${scenery.openTime}"></p>
+                                            <span th:text="${scenery.level}"></span>&nbsp;&nbsp;|&nbsp;&nbsp;<span th:text="${scenery.price}"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="accommodation">
+                        <!--哈尔滨住宿-->
+                        <div class="row">
+                            <!--/*@thymesVar id="hotels" type="com.travel.domain.Hotel"*/-->
+                            <div th:each="hotel:${hotels}">
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="thumbnail">
+                                        <!--/*@thymesVar id="hotel" type="com.travel.domain.Hotel"*/-->
+                                        <img th:src="@{${hotel.url}}" alt="...">
+                                        <div class="caption">
+                                            <h4 th:text="${hotel.name}"></h4>
+                                            <h5 th:text="${hotel.english}"></h5>
+                                            <p class="ellipsis" th:text="${hotel.hotelDesc}"></p>
+                                            <p th:text="${hotel.location}"></p>
+                                            <span th:text="${hotel.price}"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="cate">
+                        <!-- 哈尔滨店铺 -->
+                        <div class="row">
+                            <!--/*@thymesVar id="cates" type="com.travel.domain.Cates"*/-->
+                            <div th:each="cate:${cates}">
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="thumbnail">
+                                        <!--/*@thymesVar id="cate" type="com.travel.domain.Cates"*/-->
+                                        <img th:src="@{${cate.url}}" alt="...">
+                                        <div class="caption">
+                                            <h4><strong th:text="${cate.name}"></strong></h4>
+                                            <p class="ellipsis" style="-webkit-line-clamp: 1;" th:text="${cate.location}"></p>
+                                            <p class="ellipsis" style="-webkit-line-clamp: 2;" th:text="${cate.catesDesc}"></p>
+                                            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
