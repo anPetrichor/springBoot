@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>三亚</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script src="/js/head.js"></script>
+    <link type="text/css" rel="stylesheet" href="/css/travel.css">
+</head>
+<body>
+<!--导入公共头部-->
+<div th:replace="~{common/head::traveltop}"></div>
+<div th:replace="~{common/head::userInfo}"></div>
+
+<div class="sanya" style="margin-top: -20px">
+    <div class="scenery-head">
+        <div class="container">
+            <div class="row">
+                <h3><strong>三亚&nbsp;&nbsp;&nbsp;&nbsp;Sanya</strong></h3>
+                <span>欢迎您访问三亚</span>
+                <hr>
+                <div class="col-lg-8">
+                    <p>三亚市，是海南省地级市，简称崖，古称崖州，别称鹿城，地处海南岛的最南端。三亚东邻陵水县，西接乐东县，北毗保亭县，南临南海，三亚市陆地总面积1919.58平方千米，海域总面积6000平方千米。东西长91.6千米，南北宽51公里，下辖四个区。聚居了汉族、黎族、苗族等20多个民族。</p>
+                    <p>三亚是具有热带海滨风景特色的国际旅游城市  ，又被称为“东方夏威夷”。  2016年6月14日，中国科学院对外发布《中国宜居城市研究报告》，三亚宜居指数在全国40个城市中位居第三。</p>
+                    <p>2016年6月14日，中国科学院对外发布《中国宜居城市研究报告》，三亚宜居指数在全国40个城市中位居第三。  2016年9月，三亚入选“中国地级市民生发展100强”。  2017年2月，三亚入选第三批国家低碳城市试点之一。三亚也是同时入选中国特色魅力城市200强及世界特色魅力城市200强。</p>
+
+                </div>
+                <div class="col-lg-4">
+                    <!--视频控件-->
+                    <video controls>
+                        <source src="../../video/三亚.mp4" type="video/mp4">
+                        <source src="../../video/三亚.ogg" type="video/ogg">
+                        <source src="../../video/三亚.webm" type="video/webm">
+                        <object data="../../video/三亚.mp4" width="320" height="240">
+                            <embed src="../../video/三亚.swf" width="320" height="240">
+                        </object>
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container scenery-info">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <ul class="nav nav-pills nav-justified" role="tablist">
+                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">主页</a></li>
+                    <li role="presentation"><a href="#scenery" aria-controls="scenery" role="tab" data-toggle="tab">景点</a></li>
+                    <li role="presentation"><a href="#accommodation" aria-controls="accommodation" role="tab" data-toggle="tab">住宿</a></li>
+                    <li role="presentation"><a href="#cate" aria-controls="cate" role="tab" data-toggle="tab">美食店</a></li>
+                </ul>
+
+            </div>
+            <div class="panel-body">
+
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="home">
+                        <!-- 三亚主页 -->
+                        <div class="main-info">
+                            <div class="strategy">
+                                <h2>旅游攻略</h2>
+                                <div class="strategy-head">
+                                    <h3>景点概况</h3>
+                                    <hr>
+                                </div>
+                                <div class="strategy-item">
+                                    <h4>三亚速览</h4>
+                                    <div>
+                                        <p>三亚，（Sanya City）位于海南岛的最南端，是中国最南部的热带滨海旅游城市，全国空气质量最好的城市，全国最长寿地区（平均寿命80岁）。</p>
+                                        <p>三亚市别称鹿城，又被称为“东方夏威夷”，位居中国四大一线旅游城市“三威杭厦”之首，它拥有全海南岛最美丽的海滨风光。</p>
+                                    </div>
+                                </div>
+                                <div class="strategy-item">
+                                    <h4>最佳旅行时间</h4>
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <p>三亚的秋冬季温暖怡人，而三亚旅游最佳时间是每年九月到来年四月。</p>
+                                            <p>12月-2月：即使其他地方是寒流来袭，在海南三亚却仍可以穿着夏装、沙滩鞋在阳光充沛的海滩休闲漫步，沉浸在暖暖的海水中，吃着热带水果，享受着天涯海角的浪漫。</p>
+                                            <p>三亚属于热带气候，气温在一年之内的变化不是很大，最冷的时候也就是在十度左右，十度在三亚是很罕见的，在冬天，这边的气温一般是在二十度左右。夏天温度一般是在三十度之上，最高气温四十度，所以说夏天还是比较热的，而且岛上蚊子也比较多，有时候白天顶着烈日根本没有办法开心游玩。</p>
+                                            <p>但是三亚到了秋冬季，就会变得温暖怡人，冬季更是到海滨旅游的最好时候。在冬天，即使地球其他角落寒流来袭，仍可以穿着夏装、沙滩鞋在阳光充沛的海滩悠闲漫步，浸润在暖暖的海水中，吃着热带水果，享受着天涯海角的浪漫。</p>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <img class="img-thumbnail" th:src="@{/images/homepage/sanya_1.jpg}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="strategy-item">
+                                    <h4>建议游玩天数</h4>
+                                    <div>
+                                        <p>3-5天。</p>
+                                    </div>
+                                </div>
+                                <div class="strategy-item">
+                                    <h4>路线推荐</h4>
+                                    <div>
+                                        <p><a target="_blank" href="/travel/route/003?routeId=3">丽江+玉龙雪山4日玩法  游玩时间：2-5天  最佳季节：7-10月<small>(点击查看详情)</small></a></p>
+                                        <p>D1 南山寺 → 大小洞天 → 天涯海角 </p>
+                                        <p>D2 亚龙湾热带天堂森林公园 → 第一市场 </p>
+                                        <p>D3 蜈支洲岛 </p>
+                                    </div>
+                                </div>
+                                <div class="strategy-item">
+                                    <h4>必游景点</h4>
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-3">
+                                            <div class="thumbnail">
+                                                <img th:src="@{/images/homepage/sanya_2.jpg}" style="height: 163px;" alt="...">
+                                            </div>
+                                            <div class="caption">
+                                                <h5 style="text-align: center;">天涯海角</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-md-3">
+                                            <div class="thumbnail">
+                                                <img th:src="@{/images/homepage/sanya_3.jpg}" style="height: 163px;" alt="...">
+                                            </div>
+                                            <div class="caption">
+                                                <h5 style="text-align: center;">大小洞天</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-md-3">
+                                            <div class="thumbnail">
+                                                <img th:src="@{/images/homepage/sanya_4.jpg}" style="height: 163px;" alt="...">
+                                            </div>
+                                            <div class="caption">
+                                                <h5 style="text-align: center;">亚龙湾</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-md-3">
+                                            <div class="thumbnail">
+                                                <img th:src="@{/images/homepage/sanya_5.jpg}" style="height: 163px;" alt="...">
+                                            </div>
+                                            <div class="caption">
+                                                <h5 style="text-align: center;">蜈支洲岛</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="scenery">
+                        <!-- 三亚景点 -->
+                        <div class="row">
+
+                            <!--/*@thymesVar id="sceneries" type="com.travel.domain.Scenery"*/-->
+                            <div th:each="scenery:${sceneries}">
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="thumbnail">
+                                        <!--/*@thymesVar id="scenery" type="com.travel.domain.Scenery"*/-->
+                                        <img th:src="@{${scenery.url}}" alt="...">
+                                        <div class="caption">
+                                            <h3 th:text="${scenery.name}"></h3>
+                                            <p th:text="${scenery.location}"></p>
+                                            <p th:text="${scenery.openTime}"></p>
+                                            <span th:text="${scenery.level}"></span>&nbsp;&nbsp;|&nbsp;&nbsp;<span th:text="${scenery.price}"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="accommodation">
+                        <!--三亚住宿-->
+                        <div class="row">
+                            <!--/*@thymesVar id="hotels" type="com.travel.domain.Hotel"*/-->
+                            <div th:each="hotel:${hotels}">
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="thumbnail">
+                                        <!--/*@thymesVar id="hotel" type="com.travel.domain.Hotel"*/-->
+                                        <img th:src="@{${hotel.url}}" alt="...">
+                                        <div class="caption">
+                                            <h4 th:text="${hotel.name}"></h4>
+                                            <h5 th:text="${hotel.english}"></h5>
+                                            <p class="ellipsis" th:text="${hotel.hotelDesc}"></p>
+                                            <p th:text="${hotel.location}"></p>
+                                            <span th:text="${hotel.price}"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="cate">
+                        <!-- 三亚店铺 -->
+                        <div class="row">
+                            <!--/*@thymesVar id="cates" type="com.travel.domain.Cates"*/-->
+                            <div th:each="cate:${cates}">
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="thumbnail">
+                                        <!--/*@thymesVar id="cate" type="com.travel.domain.Cates"*/-->
+                                        <img th:src="@{${cate.url}}" alt="...">
+                                        <div class="caption">
+                                            <h4><strong th:text="${cate.name}"></strong></h4>
+                                            <p class="ellipsis" style="-webkit-line-clamp: 1;" th:text="${cate.location}"></p>
+                                            <p class="ellipsis" style="-webkit-line-clamp: 2;" th:text="${cate.catesDesc}"></p>
+                                            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

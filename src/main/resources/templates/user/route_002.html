@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>西安7日游线路</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/moment.js/2.22.0/moment-with-locales.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="/js/head.js"></script>
+    <script src="/js/waterFall.js"></script>
+    <link type="text/css" rel="stylesheet" href="/css/travel.css">
+</head>
+<body>
+<!--导入公共头部-->
+<div th:replace="~{common/head::traveltop}"></div>
+<div th:replace="~{common/head::userInfo}"></div>
+
+<div class="route-002">
+    <div class="container">
+        <!-- 路线头部 -->
+        <div class="route-header">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-lg-12"><span>目的地>西安</span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4"><h3 th:text="${route.name}"></h3></div>
+                        <div class="col-lg-3">
+                            <p>最佳季节：<span th:text="${route.season}"></span>月</p>
+                            <h4>价格：<span id="price" th:text="${route.price}"></span><small>元/人</small></h4>
+                        </div>
+                        <div class="col-lg-5">
+                            <input type="hidden" id="routeId" th:value="${route.id}">
+                        </div>
+                    </div>
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation"><a href="#profile">行程概况</a></li>
+                        <li role="presentation"><a href="#detail">行程详情</a></li>
+                        <li role="presentation"><a href="#forum">讨论区</a></li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <!-- 行程概况 -->
+                    <div id="profile">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="col-lg-12">
+                                    <h4>路线概览</h4>
+                                    <p>大唐不夜城 → 华清宫 → 秦始皇陵兵马俑 → 回民街 → 大雁塔</p>
+                                </div>
+                                <div class="col-lg-6">
+                                    <h4>Tips</h4>
+                                    <p>西安行程建议跟团 ，导游讲解很重要 ,历史传说是精华</p>
+                                    <p>西安景区多且分散，景区相隔远，交通不是很便捷，而且门票价格不菲，有些持学生证可打折</p>
+                                </div>
+                                <div class="col-lg-6">
+                                    <h4>总结</h4>
+                                    <p>西安最大的特点就是，历史文物和名胜古迹特别多</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 路线下单 -->
+        <div class="route-order">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="alert alert-danger">
+                        <a href="#" class="close" data-dismiss="alert">&times;</a>
+                        <strong>警告！</strong><span>在下单之前，请先确认您的登录信息（刷新该网页）以及环境安全</span>
+                    </div>
+                    <div class="form-inline">
+                        <div class="row">
+                            <div class="col-lg-9">
+                                <div class="form-group">
+                                    <label>出发</label>
+                                    <div class="input-group date"  id="reserve">
+                                        <input type="text" class="form-control" name="reserveTime" id="reserveTime" placeholder="reserveTime"  />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>成人</label>
+                                    <select class="form-control" id="adult" role="button" data-toggle="popover" data-trigger="focus" data-placement="top" title="请注意：" data-content="成年人人数不能为0！">
+                                        <option>0</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>儿童</label>
+                                    <select class="form-control" id="child">
+                                        <option>0</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                    </select>
+                                    <ins class="child-tip" data-toggle="tooltip" data-placement="bottom" title="2--12周岁（不含）不占床，含所选机票旅游车位，其余当地产生一切费用（如餐费、门票、小交通、体验费、住宿费等均自理，儿童/婴儿入住遵循酒店规则）">2-12周岁(不含12周岁)（半价）</ins>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label>总价：<span id="totalPrice">00</span>元</label>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-default" id="order">立即预定</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 路线详情 -->
+        <div class="route-body">
+            <div id="detail">
+                <body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+                <div class="row day-list">
+                    <div class="col-lg-12">
+                        <div id="D1">
+                            <h3><span class="day-num">D1</span><span>西安</span></h3>
+                            <hr>
+                            <p class="day-pio"></p>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <span><img src="../../images/destination_logo.jpg"><span class="place-link"><a href="">回民街</a></span><span>（2小时）</span></span>
+                                    <span class="day-transport">步行20分钟<i class="i-arrow"></i></span>
+                                    <span><img src="../../images/destination_logo.jpg"><span class="place-link"><a href="">永兴坊</a></span><span>（1小时）</span></span>
+                                    <span class="day-transport">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="i-arrow"></i></span>
+                                    <span><img src="../../images/destination_logo.jpg"><span class="place-link"><a href="">大唐不夜城</a></span><span>（3小时）</span></span>
+                                </li>
+                            </ul>
+                            <div class="row">
+                                <div class="col-xs-6 col-md-3">
+                                    <a href="#" class="thumbnail">
+                                        <img src="../../images/route/route_002/D1_1.jpg" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-xs-6 col-md-3">
+                                    <a href="#" class="thumbnail">
+                                        <img src="../../images/route/route_002/D1_2.jpg" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-xs-6 col-md-3">
+                                    <a href="#" class="thumbnail">
+                                        <img src="../../images/route/route_002/D1_3.jpg" alt="...">
+                                    </a>
+                                </div>
+                            </div>
+                            <h4><img src="../../images/traffic_logo.jpg" /><span style="margin-left: 20px;">交通攻略</span></h4>
+                            <hr>
+                            <p class="day-pio">步行即可到达各个景点。</p>
+                            <h4><img src="../../images/food_logo.jpg" /><span style="margin-left: 20px;">餐饮攻略</span></h4>
+                            <hr>
+                            <p class="day-pio">西安是一座有味道的城市，走进小巷子，能看到各种林立的小馆子，能闻到空气中飘散出来的令人饥肠辘辘的美食气息……
+                                在西安，你甚至可以从早吃到晚，一周吃饭不重样绝对不是梦……</p>
+                            <h4><img src="../../images/accommodation_logo.jpg" /><span style="margin-left: 20px;">住宿攻略</span></h4>
+                            <hr>
+                            <p class="day-pio">回民街是古城最繁华的地方，周围食肆、酒吧、商铺林立，晚上更是热闹非，建议选择该区域入住。</p>
+                        </div>
+                        <div id="D2">
+                            <h3><span class="day-num">D2</span><span>西安</span></h3>
+                            <hr>
+                            <p class="day-pio">今日目的地华山</p>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <span><img src="../../images/destination_logo.jpg"><span class="place-link"><a href="">华山</a></span><span>（1天）</span></span>
+                                </li>
+                            </ul>
+                            <div class="row">
+                                <div class="col-xs-6 col-md-3">
+                                    <a href="#" class="thumbnail">
+                                        <img src="../../images/route/route_002/D2_1.jpg" alt="...">
+                                    </a>
+                                </div>
+                            </div>
+                            <h4><img src="../../images/traffic_logo.jpg" /><span style="margin-left: 20px;">交通攻略</span></h4>
+                            <hr>
+                            <p class="day-pio">西安到华山最方便的方式就是乘坐高铁， 西安北站到华山北站，半个多小时就能抵达，班次很多。</p>
+                            <h4><img src="../../images/food_logo.jpg" /><span style="margin-left: 20px;">餐饮攻略</span></h4>
+                            <hr>
+                            <p class="day-pio">华山最有特色的美食是大刀面。这个名字虽然听起来不精致，却很有华山的特色，和华山的名字一样有气魄。</p>
+                            <h4><img src="../../images/accommodation_logo.jpg" /><span style="margin-left: 20px;">住宿攻略</span></h4>
+                            <hr>
+                            <p class="day-pio">有话说:名山者必登华山,登华山者必观日。想要观看华山日出,可以选择华山山顶住宿,也可以选择华山山脚下住宿</p>
+                        </div>
+                        <div id="D3">
+                            <h3><span class="day-num">D3</span>西安</h3>
+                            <hr>
+                            <p class="day-pio">今日主要游玩兵马俑</p>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <span><img src="../../images/destination_logo.jpg"><span class="place-link"><a href="">华清宫</a></span><span>（1-3小时）</span></span>
+                                    <span class="day-transport">包车70分钟<i class="i-arrow"></i></span>
+                                    <span><img src="../../images/destination_logo.jpg"><span class="place-link"><a href="">骊山</a></span><span>（1-2小时）</span></span>
+                                    <span class="day-transport">包车50分钟<i class="i-arrow"></i></span>
+                                    <span><img src="../../images/destination_logo.jpg"><span class="place-link"><a href="">秦始皇陵兵马俑</a></span><span>（3小时）</span></span>
+                                </li>
+                            </ul>
+                            <div class="row">
+                                <div class="col-xs-6 col-md-3">
+                                    <a href="#" class="thumbnail">
+                                        <img src="../../images/route/route_002/D3_1.jpg" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-xs-6 col-md-3">
+                                    <a href="#" class="thumbnail">
+                                        <img src="../../images/route/route_002/D3_2.jpg" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-xs-6 col-md-3">
+                                    <a href="#" class="thumbnail">
+                                        <img src="../../images/route/route_002/D3_3.jpg" alt="...">
+                                    </a>
+                                </div>
+                            </div>
+                            <h4><img src="../../images/traffic_logo.jpg" /><span style="margin-left: 20px;">交通攻略</span></h4>
+                            <hr>
+                            <p class="day-pio">暂无</p>
+                            <h4><img src="../../images/food_logo.jpg" /><span style="margin-left: 20px;">餐饮攻略</span></h4>
+                            <hr>
+                            <p class="day-pio">暂无</p>
+                            <h4><img src="../../images/accommodation_logo.jpg" /><span style="margin-left: 20px;">住宿攻略</span></h4>
+                            <hr>
+                            <p class="day-pio">晚上返回继续返回回民街区域住宿，这里多为一些民居式客栈，价格比较便宜，住宿环境也好。</p>
+                        </div>
+                    </div>
+                </div>
+                </body>
+            </div>
+        </div>
+
+        <!-- 路线讨论区 -->
+        <div class="route-footer">
+            <h3 class="page-header" style="text-align: center;">讨论区</h3>
+            <div id="forum">
+                <div class="comment-form">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-1">
+                            <textarea class="form-control" id="comment-txt"></textarea>
+                        </div>
+                        <div class="col-lg-2">
+                            <button class="btn btn-warning" id="comment-submit">点击发布</button>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <ul class="comment-list list-unstyled">
+                    <li class="item" th:each="leaveWord:${pageInfo.list}">
+                        <div class="c-bar">
+                            <a href="#">
+                                <img th:src="@{${leaveWord.userInfo.url}}" class="img-circle" height="48" width="48" />
+                                <span class="c-user" th:text="'@'+${leaveWord.userInfo.username}"></span>
+                            </a>
+                            <span class="c-time" th:text="${leaveWord.createTime}"></span>
+                        </div>
+                        <div class="c-txt">
+                            <p th:text="${leaveWord.txt}"></p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="row">
+                    <div class="col-lg-6 col-lg-offset-6">
+                        <div class="list-inline">
+                            <a th:href="'/travel/route/002?routeId='+${route.id}+'&page=1&size='+${pageInfo.pageSize}+'#forum'">首页</a>
+                            <a th:if="${pageInfo.pageNum > 1}" th:href="'/travel/route/002?routeId='+${route.id}+'&page='+${pageInfo.pageNum - 1}+'&size='+${pageInfo.pageSize}+'#forum'">上一页</a>
+                            <a th:each="pageNumber:${#numbers.sequence(1,pageInfo.pages)}" th:href="'/travel/route/002?routeId='+${route.id}+'&page='+${pageNumber}+'&size='+${pageInfo.pageSize}+'#forum'" th:text="${pageNumber}"></a>
+                            <a th:if="${pageInfo.pageNum < pageInfo.pages}" th:href="'/travel/route/002?routeId='+${route.id}+'&page='+${pageInfo.pageNum+1}+'&size='+${pageInfo.pageSize}+'#forum'">下一页</a>
+                            <a th:href="'/travel/route/002?routeId='+${route.id}+'&page='+${pageInfo.pages}+'&size='+${pageInfo.pageSize}+'#forum'">尾页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+</body>
+</html>
+<script src="/js/route_order.js"></script>
+<script src="/js/route_comment.js"></script>
