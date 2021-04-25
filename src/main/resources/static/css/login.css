@@ -43,6 +43,7 @@ body{
 .box .register:hover{
     border-bottom: 2px solid #ea6f5a;
 }
+/*输入框内容样式*/
 .box input[type="text"],.box input[type="password"]{
     border: 0;
     background: none;
@@ -75,6 +76,7 @@ body{
     transition: 0.25s;
     cousor: pointer;
 }
+/*触发焦点时更改样式*/
 .box input[type="text"]:focus,.box input[type="password"]:focus{
     width: 250px;
     /*border-color: #2ecc71;*/
