@@ -44,7 +44,7 @@ public class DestinationController {
     private HotelService hotelService;
 
     @RequestMapping(value = "/travel/destination/sanya",method = RequestMethod.GET)
-    public String lijiang(@RequestParam(value = "id") Integer destId,Model model) throws Exception{
+    public String sanya(@RequestParam(value = "id") Integer destId,Model model) throws Exception{
         List<Cates> cates = catesService.findCatesByDestId(destId);
         model.addAttribute("cates",cates);
         List<Scenery> sceneries = sceneryService.findSceneriesByDestId(destId);
@@ -55,7 +55,7 @@ public class DestinationController {
     }
 
     @RequestMapping(value = "/travel/destination/chengdu",method = RequestMethod.GET)
-    public String kunming(@RequestParam(value = "id") Integer destId,Model model) throws Exception{
+    public String chengdu(@RequestParam(value = "id") Integer destId,Model model) throws Exception{
         List<Cates> cates = catesService.findCatesByDestId(destId);
         model.addAttribute("cates",cates);
         List<Scenery> sceneries = sceneryService.findSceneriesByDestId(destId);
@@ -66,7 +66,7 @@ public class DestinationController {
     }
 
     @RequestMapping(value = "/travel/destination/hangzhou",method = RequestMethod.GET)
-    public String dali(@RequestParam("id") Integer destId,Model model) throws Exception{
+    public String hangzhou(@RequestParam("id") Integer destId,Model model) throws Exception{
         List<Cates> cates = catesService.findCatesByDestId(destId);
         model.addAttribute("cates",cates);
         List<Scenery> sceneries = sceneryService.findSceneriesByDestId(destId);
@@ -77,7 +77,7 @@ public class DestinationController {
     }
 
     @RequestMapping(value = "/travel/destination/xian",method = RequestMethod.GET)
-    public String xishuangbanna(@RequestParam("id") Integer destId,Model model) throws Exception{
+    public String xian(@RequestParam("id") Integer destId,Model model) throws Exception{
         List<Cates> cates = catesService.findCatesByDestId(destId);
         model.addAttribute("cates",cates);
         List<Scenery> sceneries = sceneryService.findSceneriesByDestId(destId);
@@ -88,7 +88,7 @@ public class DestinationController {
     }
 
     @RequestMapping(value = "/travel/destination/haerbin",method = RequestMethod.GET)
-    public String xianggelila(@RequestParam("id") Integer destId,Model model) throws Exception{
+    public String haerbin(@RequestParam("id") Integer destId,Model model) throws Exception{
         List<Cates> cates = catesService.findCatesByDestId(destId);
         model.addAttribute("cates",cates);
         List<Scenery> sceneries = sceneryService.findSceneriesByDestId(destId);
@@ -99,7 +99,7 @@ public class DestinationController {
     }
 
     @RequestMapping(value = "/travel/destination/xiamen",method = RequestMethod.GET)
-    public String tengchong(@RequestParam("id") Integer destId,Model model) throws Exception{
+    public String xiamen(@RequestParam("id") Integer destId,Model model) throws Exception{
         List<Cates> cates = catesService.findCatesByDestId(destId);
         model.addAttribute("cates",cates);
         List<Scenery> sceneries = sceneryService.findSceneriesByDestId(destId);
